@@ -3,6 +3,14 @@
 
 ## DEPLOY-01 — GitHub и Vercel (26.11.2026)
 
+**Итог: публикация выполнена.** GitHub: https://github.com/Sanyo4ek952/ai-fitness-coach — PUBLIC, main. Приватное создание GitHub отклонил Trade controls; владелец явно выбрал публичный репозиторий. Production: https://ai-fitness-coach-blond-gamma.vercel.app/ — READY, коммит `26c2795e5dc18c1db9570da379251c079e64e8be`, deployment `dpl_8YvQvZSX9MmrMBnqsnC6Btciavq5`, сборка ~32с, Node22, framework=null/static out. Vercel API собирает код GitHub; автоматическая связь на каждый push не настроена. README содержит адреса и порядок переноса данных через backup.
+
+Внешняя проверка `node local-data/deploy-smoke.mjs` после финального READY: пять страниц HTTP200/lang=ru; все50ресурсов PWA HTTP200 и совпадение SHA256; корректные MIME TXT/manifest/SW и no-cache SW; отсутствующий JS, local-data и docs —404. Публичные проверки выполнены без аккаунта/токена. Это HTTP/integrity smoke, не браузерный offline/телефонный e2e. Runtime-функций/аналитических трекеров/нового мониторинга нет.
+
+Первоначальный CI упал на прежнем Windows-only имени RSC в tests/routes.test.mjs. Linux production содержит `__next.coach.__PAGE__.txt`; тест теперь допускает обе формы, сохраняя проверку наличия payload и integrity всех assets. Локально routes повторно7/7; GitHub Actions run45871336640 — **success** (install/lint/typecheck/test/build/routes,1м16с). Есть предупреждение старых major CI-actions о runtime Node20; само приложение собрано на22, обновление actions — отдельная задача.
+
+Auto-review один раз отклонил переключение SSO production: потребовал явного согласия владельца на публичный доступ. После отдельного ответа «Да, открыть production всем» операция выполнена: ssoProtection=preview, production открыт. Других отказов не было. Личные localhost/IndexedDB/файлы не переносились и не менялись. Появившаяся во время работы неотслеживаемая docs/design/screenshots оставлена без изменений и не загружена. Следующая задача — установка/офлайн на реальном телефоне и перенос собственной backup по выбору владельца; общая M6/M7 приёмка остаётся открытой.
+
 Явный запрос владельца разрешает коммиты и публикацию текущего приложения. Приёмка: приватный GitHub-репозиторий, production HTTPS на Vercel, пять маршрутов и все ресурсы PWA доступны, личные файлы исключены. План: проверка → первоначальный коммит/push → Git-интеграция Vercel → HTTP-проверка.
 
 Добавлены vercel.json (статический out, pnpm frozen lockfile, заголовки SW/manifest/TXT) и исключение .vercel в .gitignore. Прочитаны текущие PRODUCT/ROADMAP/ARCHITECTURE, bundled Next static-export/deploy guides и навыки Vercel. Backend/зависимости/БД/программа не менялись. git init -b main; индекс проверен: local-data/backups/photos/.vercel исключены, поиск известных форматов токенов и private keys совпадений не дал. Начальный git diff --cached --check отметил только прежние пустые строки EOF в 11 файлах, несвязанные исходники не переписывались.
