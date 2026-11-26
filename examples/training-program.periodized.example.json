@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "kind": "training_program",
+  "program": {
+    "title": "Пример формата · 8 недель · A/B/C",
+    "goalInterpretation": "Синтетическая демонстрация контракта, не индивидуальное назначение нагрузки.",
+    "workouts": [
+      {
+        "title": "A · Ноги и жим",
+        "exercises": [
+          {
+            "exerciseId": "barbell-squat",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 10,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 2,
+            "rirMax": 3,
+            "note": "Вес подбирается по технике и запасу повторений.",
+            "setPlans": [
+              {
+                "kind": "warmup",
+                "target": {
+                  "type": "reps",
+                  "min": 10,
+                  "max": 10,
+                  "weightKg": 20
+                },
+                "restSec": 60,
+                "rir": 4,
+                "note": "Лёгкий разминочный подход."
+              },
+              {
+                "kind": "working",
+                "target": {
+                  "type": "reps",
+                  "min": 8,
+                  "max": 10,
+                  "weightKg": null
+                },
+                "restSec": 120,
+                "rir": 2,
+                "rirMax": 3
+              },
+              {
+                "kind": "working",
+                "target": {
+                  "type": "reps",
+                  "min": 8,
+                  "max": 10,
+                  "weightKg": null
+                },
+                "restSec": 120,
+                "rir": 2,
+                "rirMax": 3
+              }
+            ]
+          },
+          {
+            "exerciseId": "db-bench-press",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": 12
+            },
+            "restSec": 120,
+            "rir": 2
+          },
+          {
+            "exerciseId": "cable-row",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 10,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 90,
+            "rir": 2
+          }
+        ]
+      },
+      {
+        "title": "B · Тяга и плечи",
+        "exercises": [
+          {
+            "exerciseId": "romanian-deadlift",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 10,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3
+          },
+          {
+            "exerciseId": "assisted-pull-up",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 6,
+              "max": 10,
+              "weightKg": 30
+            },
+            "restSec": 120,
+            "rir": 2,
+            "note": "30 кг — противовес, не отягощение."
+          },
+          {
+            "exerciseId": "db-overhead-press",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": 8
+            },
+            "restSec": 90,
+            "rir": 2
+          },
+          {
+            "exerciseId": "plank",
+            "sets": 2,
+            "target": {
+              "type": "duration",
+              "seconds": 30,
+              "maxSeconds": 45
+            },
+            "restSec": 60
+          }
+        ]
+      },
+      {
+        "title": "C · Смешанное занятие",
+        "exercises": [
+          {
+            "exerciseId": "leg-press",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 10,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 2
+          },
+          {
+            "exerciseId": "single-arm-cable-press",
+            "sets": 3,
+            "target": {
+              "type": "reps",
+              "min": 10,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 90,
+            "definition": {
+              "id": "single-arm-cable-press",
+              "name": "Жим одной рукой на блоке стоя",
+              "equipment": [
+                "cable"
+              ],
+              "measurement": "reps",
+              "load": {
+                "type": "external",
+                "unit": "kg",
+                "basis": "machine-stack"
+              },
+              "muscleGroups": [
+                "chest",
+                "arms",
+                "core"
+              ]
+            },
+            "rir": null
+          },
+          {
+            "exerciseId": "push-up",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": 0
+            },
+            "restSec": 90,
+            "rir": 2
+          },
+          {
+            "exerciseId": "treadmill-walk",
+            "sets": 1,
+            "target": {
+              "type": "distance",
+              "meters": 1000,
+              "intensity": "Комфортный темп"
+            },
+            "restSec": 0
+          }
+        ]
+      }
+    ],
+    "reviewAfterSessions": 6,
+    "phases": [
+      {
+        "id": "foundation",
+        "title": "Освоение и подбор веса",
+        "goal": "Освоить движения и определить индивидуальные рабочие веса.",
+        "duration": {
+          "unit": "weeks",
+          "count": 3,
+          "sessionsPerWeek": 3
+        },
+        "transition": "after_sessions",
+        "transitionNote": "Переход только после просмотра нагрузки и подтверждения спортсменом.",
+        "overrides": []
+      },
+      {
+        "id": "development",
+        "title": "Развитие",
+        "goal": "Продолжить последовательную работу с выбранными весами.",
+        "duration": {
+          "unit": "weeks",
+          "count": 3,
+          "sessionsPerWeek": 3
+        },
+        "transition": "after_sessions",
+        "transitionNote": "Переход только после просмотра нагрузки и подтверждения спортсменом.",
+        "overrides": [
+          {
+            "workoutIndex": 0,
+            "exerciseIndex": 1,
+            "prescription": {
+              "exerciseId": "db-bench-press",
+              "sets": 3,
+              "target": {
+                "type": "reps",
+                "min": 8,
+                "max": 10,
+                "weightKg": 14
+              },
+              "restSec": 120,
+              "rir": 2
+            }
+          }
+        ]
+      },
+      {
+        "id": "consolidation",
+        "title": "Закрепление",
+        "goal": "Оценить результаты и подготовить следующий цикл.",
+        "duration": {
+          "unit": "weeks",
+          "count": 2,
+          "sessionsPerWeek": 3
+        },
+        "transition": "after_sessions",
+        "transitionNote": "Переход только после просмотра нагрузки и подтверждения спортсменом.",
+        "overrides": [
+          {
+            "workoutIndex": 0,
+            "exerciseIndex": 1,
+            "prescription": {
+              "exerciseId": "db-bench-press",
+              "sets": 2,
+              "target": {
+                "type": "reps",
+                "min": 8,
+                "max": 12,
+                "weightKg": 12
+              },
+              "restSec": 120,
+              "rir": 3
+            }
+          }
+        ]
+      }
+    ],
+    "progressionRules": [
+      {
+        "id": "double-progression",
+        "description": "При достижении верхней границы всех рабочих подходов с запасом предложить повышение веса.",
+        "condition": {
+          "type": "upper_reps",
+          "sessions": 2,
+          "minRir": 2
+        },
+        "action": {
+          "type": "weight",
+          "change": 1,
+          "unit": "kg"
+        }
+      },
+      {
+        "id": "assistance-progression",
+        "exerciseId": "assisted-pull-up",
+        "description": "При достижении верха диапазона предложить уменьшить помощь.",
+        "condition": {
+          "type": "upper_reps",
+          "sessions": 2,
+          "minRir": 2
+        },
+        "action": {
+          "type": "weight",
+          "change": -2.5,
+          "unit": "kg"
+        }
+      },
+      {
+        "id": "regression-review",
+        "description": "При повторном недостижении нижней границы с низким RIR разобрать нагрузку.",
+        "condition": {
+          "type": "below_reps",
+          "sessions": 2,
+          "maxRir": 1
+        },
+        "action": {
+          "type": "review",
+          "instruction": "Проверить технику, восстановление и доступный шаг нагрузки с ИИ или тренером."
+        }
+      },
+      {
+        "id": "plateau",
+        "description": "Одинаковые сопоставимые рабочие результаты в трёх занятиях — повод для анализа.",
+        "condition": {
+          "type": "plateau",
+          "sessions": 3
+        },
+        "action": {
+          "type": "review",
+          "instruction": "Оценить причины отсутствия прогресса до изменения объёма."
+        }
+      }
+    ],
+    "recommendations": [
+      {
+        "category": "technique",
+        "exerciseId": "barbell-squat",
+        "text": "Используйте знакомую комфортную амплитуду и контролируемое движение."
+      },
+      {
+        "category": "warmup",
+        "text": "Выполните общую разминку и подготовительные подходы; первый подход приседа уже размечен как разминочный."
+      },
+      {
+        "category": "recovery",
+        "text": "Сохраняйте удобные интервалы отдыха между занятиями; даты не обязательны."
+      },
+      {
+        "category": "cardio",
+        "text": "Кардио выполняйте в комфортном темпе с учётом текущего самочувствия."
+      },
+      {
+        "category": "nutrition",
+        "text": "При желании поддерживайте регулярное питание с привычными источниками белка."
+      },
+      {
+        "category": "safety",
+        "text": "При острой боли прекратите соответствующее упражнение и оцените необходимость помощи."
+      },
+      {
+        "category": "other",
+        "phaseId": "consolidation",
+        "text": "Перед следующим циклом передайте факты тренировок и полную программу для анализа."
+      }
+    ]
+  }
+}

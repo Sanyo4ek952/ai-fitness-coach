@@ -1,0 +1,30 @@
+<div id="ux03-overview" lang="ru" aria-label="Предложенный путь от первого входа до тренировки">
+ <ol>
+  <li><div class="ux-mini"><span>AI Fitness Coach</span><h3>С чего начнём?</h3><p>О себе → ИИ → тренировка</p><strong>Получить программу</strong></div><p>Первый вход</p></li>
+  <li><div class="ux-mini"><span>О себе · 1 из 3</span><h3>Какая у вас цель?</h3><p class="ux-field">Стать сильнее</p><p>Опыт и ритм → оборудование</p><strong>Дальше</strong></div><p>Короткие вопросы</p></li>
+  <li><div class="ux-mini"><span>Перед запросом</span><h3>Всё верно?</h3><p>Цель · опыт · оборудование</p><p>Дополнить по желанию</p><strong>Сохранить сведения</strong></div><p>Одна проверка ответов</p></li>
+  <li><div class="ux-mini"><span>Запрос к ИИ</span><h3>Файл для вашего чата</h3><p>Состав и личные сведения</p><p>Фото не входят</p><strong>Скачать запрос</strong></div><p>Внешний чат → JSON</p></li>
+  <li><div class="ux-mini"><span>Ещё не принята</span><h3>Программа А → Б</h3><p>Весь план и пояснения</p><p>□ Подтверждение пакета</p><strong>Принять программу</strong></div><p>Просмотр и явный выбор</p></li>
+  <li><div class="ux-mini"><span>Следующее занятие</span><h3>А · Всё тело</h3><p>3 упражнения · 4 подхода</p><strong>Начать тренировку</strong><p>Упражнения по запросу</p></div><p>Старт без длинного обзора</p></li>
+ </ol>
+</div>
+<style>
+#ux03-overview{font:16px/1.5 system-ui,sans-serif;color:#eaf2ff;background:#071127;padding:16px;border-radius:16px}
+#ux03-overview *{box-sizing:border-box;min-width:0}
+#ux03-overview ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+#ux03-overview li{position:relative;display:grid;gap:8px;align-content:start}
+#ux03-overview li:not(:last-child)::after{content:'→';display:block;position:absolute;right:-24px;top:130px}
+#ux03-overview li:nth-child(3)::after{content:'↓';right:50%;top:100%}
+#ux03-overview li:nth-child(4){grid-column:3;grid-row:2}
+#ux03-overview li:nth-child(5){grid-column:2;grid-row:2}
+#ux03-overview li:nth-child(6){grid-column:1;grid-row:2}
+#ux03-overview li:nth-child(4)::after,#ux03-overview li:nth-child(5)::after{content:'←';right:auto;left:-24px}
+#ux03-overview .ux-mini{background:#0e2140;color:#eaf2ff;border:1px solid #6983a6;border-radius:16px;padding:16px;min-height:300px;display:flex;flex-direction:column;gap:14px;overflow-wrap:anywhere}
+#ux03-overview h3,#ux03-overview p{margin:0}
+#ux03-overview h3{font-size:20px;line-height:1.25;font-weight:600}
+#ux03-overview .ux-mini span{font-size:12px;color:#a8eaff}
+#ux03-overview .ux-mini p{font-size:14px}
+#ux03-overview .ux-mini strong{font-size:14px;line-height:1.3;background:#2461d9;border:1px solid #8ecaff;border-radius:8px;padding:12px;font-weight:500;margin-top:auto}
+#ux03-overview .ux-field{border:1px solid #6983a6;padding:10px;border-radius:8px}
+@media(max-width:560px){#ux03-overview ol{grid-template-columns:1fr}#ux03-overview li,#ux03-overview li:nth-child(n){grid-column:auto;grid-row:auto;grid-template-columns:minmax(0,160px) 1fr;align-items:center;gap:16px}#ux03-overview .ux-mini{min-height:260px;padding:12px}#ux03-overview h3{font-size:16px}#ux03-overview li:not(:last-child)::after{content:'↓';right:auto;left:70px;top:100%}}
+</style>

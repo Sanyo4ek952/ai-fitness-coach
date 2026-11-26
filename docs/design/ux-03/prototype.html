@@ -1,0 +1,145 @@
+<div id="ux03" lang="ru">
+  <div class="ux-tools" aria-label="Просмотр прототипа">
+    <label>Экран <select id="ux-screen"></select></label>
+    <label>Ширина <select id="ux-width"><option>390</option><option>360</option><option>320</option></select></label>
+    <label><input id="ux-large" type="checkbox"> Текст 200%</label>
+  </div>
+  <div class="ux-phone" aria-label="AI Fitness Coach, проект интерфейса">
+    <header><span class="ux-brand">//</span> AI Fitness Coach <span class="ux-demo">Прототип</span></header>
+    <div id="ux-status" role="status" class="ux-status"></div>
+    <main id="ux-content"></main>
+    <nav aria-label="Основные разделы" id="ux-nav"></nav>
+  </div>
+</div>
+<style>
+#ux03{font:16px/1.5 system-ui,sans-serif;color:#eff5ff;background:transparent;padding:0;--ux-size:16px;--ux-width:390px;--ux-blue:#8ee8ff}
+#ux03 *{box-sizing:border-box;min-width:0}
+#ux03 .ux-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px;padding-right:90px;font-size:14px}
+#ux03 .ux-tools label{display:flex;align-items:center;gap:8px}
+#ux03 .ux-tools select{width:auto;min-height:44px;font:inherit;color:#eff5ff;background:#122440;border:1px solid #5c769b;border-radius:8px;padding:8px}
+#ux03 .ux-phone{width:min(100%,var(--ux-width));margin:auto;background:linear-gradient(150deg,#142f59 0%,#09162d 35%,#09162d 100%);color:#eff5ff;font-size:var(--ux-size);border:1px solid #516685;border-radius:22px;overflow-wrap:anywhere}
+#ux03 header{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:18px 18px 8px;font-size:.9em}
+#ux03 .ux-brand{font-size:1.5em;font-weight:700;color:#71deff;font-style:italic}
+#ux03 .ux-demo{font-size:.85em;color:#bacde7;margin-left:auto}
+#ux03 main{padding:18px;display:grid;gap:18px}
+#ux03 h1,#ux03 h2,#ux03 h3,#ux03 p{margin:0}
+#ux03 h1{font-size:1.5em;line-height:1.18;letter-spacing:-.025em;font-weight:650}
+#ux03 h2{font-size:1.25em;line-height:1.3;font-weight:600}
+#ux03 h3{font-size:1em;font-weight:600}
+#ux03 .ux-muted{color:#bacde7}
+#ux03 .ux-kicker{color:#8ee8ff;font-size:.85em}
+#ux03 .ux-card{padding:16px;border:1px solid #445c80;border-radius:16px;background:#132947;display:grid;gap:14px}
+#ux03 .ux-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+#ux03 .ux-stack{display:grid;gap:10px}
+#ux03 .ux-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,8em),1fr));gap:12px}
+#ux03 button,#ux03 summary,#ux03 input,#ux03 textarea,#ux03 select{font:inherit}
+#ux03 button{min-height:48px;border:1px solid #66809f;border-radius:12px;padding:11px 14px;color:#d8f5ff;background:#173454;cursor:pointer;white-space:normal;overflow-wrap:anywhere;text-align:center}
+#ux03 button.ux-primary{background:#2461d9;color:#fff;border-color:#83c2ff;font-weight:600;width:100%}
+#ux03 button.ux-plain{background:transparent;border-color:transparent;color:#b8eaff;text-align:left;padding:8px 0}
+#ux03 button:focus-visible,#ux03 input:focus-visible,#ux03 textarea:focus-visible,#ux03 select:focus-visible,#ux03 summary:focus-visible{outline:3px solid #ffdf85;outline-offset:3px}
+#ux03 button:disabled{opacity:.6;cursor:default}
+#ux03 label{display:grid;gap:8px}
+#ux03 input:not([type=checkbox]),#ux03 textarea,#ux03 main select{display:block;width:100%;min-height:48px;background:#091a30;color:#fff;border:1px solid #69819e;border-radius:10px;padding:10px;font-size:1em}
+#ux03 textarea{resize:vertical;min-height:90px}
+#ux03 input[type=checkbox]{width:22px;height:22px;flex-shrink:0;accent-color:#2673ec}
+#ux03 .ux-check{display:flex;align-items:center;min-height:48px;gap:12px}
+#ux03 details{border-top:1px solid #445c80;padding-top:8px}
+#ux03 summary{min-height:44px;cursor:pointer;color:#c6e8ff;padding:8px 0}
+#ux03 details>div{display:grid;gap:12px;padding:10px 0}
+#ux03 ul,#ux03 ol{margin:0;padding-left:24px}
+#ux03 li{padding:4px 0}
+#ux03 .ux-status:empty{display:none}
+#ux03 .ux-status{margin:12px 18px 0;color:#bff5db}
+#ux03 .ux-error{color:#ffd7d4;border-left:3px solid #ffaaa2;padding:8px 12px;background:#392331}
+#ux03 .ux-big{font-size:2.25em;font-variant-numeric:tabular-nums}
+#ux03 nav{padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;border-top:1px solid #445c80}
+#ux03 nav button{font-size:.85em;background:transparent;min-height:48px}
+#ux03 nav button[aria-current=page]{color:#8ee8ff;border-color:#8ee8ff}
+#ux03 .ux-line{border-bottom:1px solid #445c80;padding-bottom:10px}
+#ux03 fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
+#ux03 legend{margin-bottom:10px}
+</style>
+<script>
+(() => {
+ const root=document.getElementById('ux03');
+ const content=root.querySelector('#ux-content'), screenPicker=root.querySelector('#ux-screen'), status=root.querySelector('#ux-status');
+ const names=['Первый вход','Цель','Опыт и ритм','Оборудование','Проверка сведений','Файл для ИИ','Ожидание ответа','Предложенный план','Тренировка','Подход','Отдых','Завершение','Итог','Прогресс','Профиль','Обновление плана','Ошибка импорта','Ошибка сохранения'];
+ let step=0,accepted=false,editingSummary=false,done=0,nextWorkout='А',goal='',experience='Не знаю',frequency='Не знаю',equipment=[],weight='',reps='8',restDeadline=0;
+ const optional={};
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const btn=(label,to,primary=false)=>`<button type="button" ${primary?'class="ux-primary"':''} data-go="${to}">${label}</button>`;
+ const more=(title,body)=>`<details><summary>${title}</summary><div>${body}</div></details>`;
+ const head=(k,title)=>`<p class="ux-kicker">${k}</p><h1>${title}</h1>`;
+ const exercises=`<li>Присед с гантелью · 2 × 8–10 · вес подобрать · отдых 60 с</li><li>Планка · 1 × 20 с · отдых 30 с</li><li>Ходьба на дорожке · 1 × 100 м · отдых 30 с</li>`;
+ const plan=(title)=>more(title,`<h3>А · Всё тело</h3><ol>${exercises}</ol><h3>Б · Всё тело</h3><ol>${exercises}</ol><p>Это синтетический пример, не тренировочная рекомендация.</p>`);
+ const opts=(items,selected)=>items.map(s=>`<option ${s===selected?'selected':''}>${esc(s)}</option>`).join('');
+ names.forEach((name,i)=>screenPicker.add(new Option(name,String(i))));
+ function capture(){
+   const read=id=>root.querySelector('#'+id)?.value;
+   if(read('ux-goal')!==undefined)goal=read('ux-goal');
+   if(read('ux-exp')!==undefined)experience=read('ux-exp');
+   if(read('ux-freq')!==undefined)frequency=read('ux-freq');
+   if(root.querySelector('[name=equipment]'))equipment=[...root.querySelectorAll('[name=equipment]:checked')].map(e=>e.value);
+   if(read('ux-weight')!==undefined)weight=read('ux-weight');
+   if(read('ux-reps')!==undefined)reps=read('ux-reps');
+   root.querySelectorAll('[data-optional]').forEach(e=>optional[e.name]=e.type==='checkbox'?e.checked:e.value);
+ }
+ function optionalFields(){return more('Дополнить сведения · по желанию',`<p class="ux-muted">Можно оставить пустым. Фото и замеры — позже в «Прогрессе».</p>${[['age','Возраст, лет'],['height','Рост, см'],['bodyWeight','Масса тела, кг'],['minutes','Время на занятие, минут']].map(([id,label])=>`<label>${label}<input data-optional name="${id}" inputmode="decimal" value="${esc(optional[id]??'')}" placeholder="Не знаю"></label>`).join('')}${[['loads','Рабочие и доступные веса'],['limits','Ограничения и нежелательные упражнения'],['sleep','Сон и восстановление'],['food','Особенности питания']].map(([id,label])=>`<label>${label}<textarea data-optional name="${id}">${esc(optional[id]??'')}</textarea></label>`).join('')}<label class="ux-check"><input data-optional name="nutrition" type="checkbox" ${optional.nutrition?'checked':''}> Хочу до трёх советов по питанию</label>`);}
+ function render(){
+ screenPicker.value=String(step); status.textContent='';
+ let html='';
+ switch(step){
+ case 0:html=head('ВАШ ПЕРВЫЙ ПЛАН','С чего начнём?')+`<p>Подготовим программу для вашей цели.</p><div class="ux-card"><h2>О себе → ИИ → тренировка</h2><p class="ux-muted">Без регистрации. Программа создаётся в выбранном вами чате ИИ.</p></div>`+btn('Получить программу',1,true)+btn('У меня уже есть ответ ИИ',6)+more('Восстановить данные',`<p>В рабочем приложении здесь будет выбор резервной копии с предпросмотром полной замены.</p><p>В прототипе файлы не читаются.</p>`);break;
+ case 1:html=head('О СЕБЕ · 1 ИЗ 3','Какая у вас цель?')+`<label>Моя цель<textarea id="ux-goal" placeholder="Например, стать сильнее">${esc(goal)}</textarea></label><div class="ux-row"><button data-goal="Стать сильнее">Стать сильнее</button><button data-goal="Набрать мышцы">Набрать мышцы</button></div><p class="ux-muted">Можно написать своими словами.</p><p id="ux-goal-error" role="alert"></p><button class="ux-primary" data-action="goal">Дальше</button>`+btn('Назад',0);break;
+ case 2:html=head('О СЕБЕ · 2 ИЗ 3','Как вы тренируетесь?')+`<label>Опыт<select id="ux-exp">${opts(['Не знаю','Начинаю','Тренируюсь регулярно','Большой опыт'],experience)}</select></label><label>Занятий в неделю<select id="ux-freq">${opts(['Не знаю','1','2','3','4','5','6','7'],frequency)}</select></label><p class="ux-muted">Это ориентир, без обязательных дней.</p>`+btn('Дальше',3,true)+btn('Назад',1);break;
+ case 3:html=head('О СЕБЕ · 3 ИЗ 3','Что есть в вашем зале?')+`<fieldset><legend>Доступное оборудование</legend>${['Гантели','Скамья','Штанга','Стойка','Блочные тренажёры','Жим ногами','Гравитрон','Беговая дорожка','Собственный вес'].map(s=>`<label class="ux-check"><input type="checkbox" name="equipment" value="${s}" ${equipment.includes(s)?'checked':''}>${s}</label>`).join('')}</fieldset><p class="ux-muted">Не знаете — оставьте без отметок.</p>`+btn('Проверить сведения',4,true)+btn('Назад',2);break;
+ case 4:html=head('ПЕРЕД ЗАПРОСОМ','Всё верно?')+`<div class="ux-card"><div class="ux-row"><h2>Ваша цель</h2>${btn('Изменить',1)}</div><p>${esc(goal||'Цель ещё не указана')}</p><p class="ux-muted">${esc(experience)} · Частота: ${esc(frequency)}</p><p>${esc(equipment.join(', ')||'Оборудование не указано')}</p>${btn('Изменить опыт и ритм',2)}${btn('Изменить оборудование',3)}</div>`+optionalFields()+`<p class="ux-muted">Сведения останутся на устройстве. Перед экспортом покажем состав файла.</p><button class="ux-primary" data-action="profile">${goal?'Сохранить и подготовить запрос':'Указать цель'}</button>`;break;
+ case 5:html=head('ЗАПРОС К ИИ · 1 ИЗ 2','Подготовить файл')+`<div class="ux-card"><h2>Что получит выбранный ИИ</h2><p>Цель, опыт, частота, оборудование и все заполненные добровольные сведения, включая ограничения, сон и питание.</p><p>Также: согласие на советы, каталог упражнений, инструкция и схема ответа.</p><p><strong>Фото не входят. Замеры не выбраны.</strong></p></div><p>Файл содержит личные сведения. Приложение ничего не отправляет: вы сами передадите его выбранному сервису.</p><button class="ux-primary" data-action="export">Скачать запрос</button>`+more('Другой способ',`<button data-action="copy">Скопировать запрос с инструкцией</button>`)+btn('Изменить сведения',4);break;
+ case 6:html=head('ЗАПРОС К ИИ · 2 ИЗ 2','Теперь — в ваш чат ИИ')+`<ol><li>Прикрепите скачанный запрос к выбранному чату.</li><li>Попросите вернуть ответ файлом JSON.</li><li>Вернитесь сюда с ответом.</li></ol><div class="ux-card"><p>Текст для чата</p><p>Составь программу по инструкции в файле. Верни один JSON-файл.</p><button data-action="command">Скопировать текст</button></div><button class="ux-primary" data-action="import">Загрузить ответ ИИ · пример</button><p class="ux-muted">В прототипе используется готовый пример. Нет скачивания, буфера обмена и чтения файлов.</p>`+btn('Посмотреть пример ошибки',16)+btn('Вернуться к запросу',5);break;
+ case 7:html=head('ЕЩЁ НЕ ПРИНЯТА','Программа для вашей цели')+`<div class="ux-card"><h2>А → Б → повтор</h2><p>Интерпретация цели: ${esc(goal||'стать сильнее')}.</p><p>Вес подбирается на занятии. Начинайте с комфортной нагрузки.</p><p class="ux-muted">Синтетический план для просмотра интерфейса.</p></div>`+plan('Посмотреть весь план')+`<p>Проверка файла не гарантирует безопасность рекомендаций. Принятие сохранит весь пакет и сделает занятие А следующим.</p><label class="ux-check"><input id="ux-consent" type="checkbox"> Я просмотрел(а) весь пакет и хочу принять программу</label><button class="ux-primary" id="ux-accept" data-action="accept" disabled>Принять программу</button>`+btn('Не принимать',6);break;
+ case 8:html=head('СЛЕДУЮЩЕЕ ЗАНЯТИЕ',`${nextWorkout} · Всё тело`)+`<p>3 упражнения · 4 подхода</p><button class="ux-primary" data-action="start">Начать тренировку</button>`+more('Посмотреть упражнения',`<ol>${exercises}</ol>`)+`<div class="ux-line"><p>Можно проверить программу по результатам.</p>${btn('К анализу',15)}</div>`+more('Порядок занятий',`<p>А → Б → А. Перерыв не меняет очередь.</p>`);break;
+ case 9:html=head(nextWorkout+' · ВСЁ ТЕЛО','Присед с гантелью')+`<p class="ux-muted">Подход ${done+1} · сохранено ${done}</p><div class="ux-card"><p>План: 8–10 повторений · вес подобрать</p><div class="ux-fields"><label>Вес, кг<input id="ux-weight" inputmode="decimal" placeholder="Подобрать" value="${esc(weight)}"></label><label>Повторы<input id="ux-reps" inputmode="numeric" value="${esc(reps)}"></label></div><p class="ux-muted">Пустой вес — неизвестен, не ноль.</p><button class="ux-primary" data-action="set">Сохранить подход</button></div>`+more('Запас повторений · по желанию',`<label>Сколько ещё могли бы сделать?<input inputmode="numeric" placeholder="Не знаю"></label>`)+more('Действия с упражнением',`<p>Замена и пропуск требуют отдельного выбора в рабочем приложении. История и программа сохраняются.</p>`)+`<button data-action="set-error">Посмотреть отказ сохранения</button>`+btn('Завершить тренировку',11);break;
+ case 10:html=head('ПОДХОД СОХРАНЁН','Отдых')+`<div class="ux-card"><p class="ux-big" id="ux-timer">1:00</p><p>После приседа с гантелью</p><p class="ux-muted">Звук в фоне не гарантируется.</p></div>`+btn('Продолжить тренировку',9,true)+btn('Завершить тренировку',11);break;
+ case 11:html=head('ЗАВЕРШЕНИЕ','Закончить сейчас?')+`<div class="ux-card"><h2>Сохранено подходов: ${done}</h2><p>${done?'Тренировка будет частичной. Невыполненное не станет результатом. Следующее занятие — '+(nextWorkout==='А'?'Б':'А')+'.':'Результатов нет. Следующим останется занятие '+nextWorkout+'.'}</p></div><button class="ux-primary" data-action="finish">Завершить ${done?'частично':'без результатов'}</button>`+btn('Вернуться к тренировке',9);break;
+ case 12:html=head('ГОТОВО','Тренировка сохранена')+`<div class="ux-card"><h2>${done} подходов · ${done?'частично':'без результатов'}</h2><p>Следующее занятие — ${nextWorkout}.</p></div>`+btn('К следующему занятию',8,true)+btn('Посмотреть результаты',13);break;
+ case 13:html=head('ВАША РАБОТА','Прогресс')+`<div class="ux-card"><h2>${done?1:0} частичных тренировок</h2><p>${done} сохранённых подходов</p><p class="ux-muted">Это выполненная работа, не оценка роста силы.</p></div>`+more('История упражнений',`<p>Присед с гантелью · ${done} подходов. Для сравнения нужны сопоставимые факты.</p>`)+more('Замеры и фото · по желанию',`<p>Добавляются отдельно. Фото локальны и никогда не входят в JSON-запрос.</p>`)+btn('К тренировке',8,true);break;
+ case 14:html=head('НАСТРОЙКИ','Профиль')+`<div class="ux-card"><h2>${esc(goal||'Цель ещё не указана')}</h2><p>${esc(experience)} · ${esc(frequency)} занятий в неделю</p>${btn('Изменить сведения',4)}</div>`+more('Резервная копия',`<p>Браузер может удалить данные. Копия содержит личные сведения и не зашифрована.</p><p>Восстановление полностью заменяет профиль, программу, историю и фото. Копия без фото удалит текущие снимки. Сначала сохранить текущую копию.</p>`)+more('Хранение и приватность',`<p>Данные локальны, приложение их не шифрует. Старые ревизии и пакеты могут содержать прежние сведения. Внешние файлы и чаты остаются вне приложения.</p><p>Удаление всех данных — отдельный предпросмотр и подтверждение в рабочем приложении.</p>`);break;
+ case 15:html=head('ПРЕДЛОЖЕНИЕ ИИ','Изменится один параметр')+`<div class="ux-card"><h2>Присед с гантелью</h2><p>Было: 8–10 повторений</p><p>Станет: 9–10 повторений</p><p>Причина в примере: текущий диапазон даётся легко.</p></div>`+plan('Посмотреть весь новый план')+`<p>Принятие создаст новую версию. История сохранится. Следующее занятие начнётся с А новой программы.</p><label class="ux-check"><input id="ux-consent" type="checkbox"> Принимаю весь просмотренный пакет изменений</label><button class="ux-primary" id="ux-accept" data-action="update" disabled>Принять изменения</button>`+btn('Не применять изменения',8);break;
+ case 16:html=head('ОТВЕТ НЕ ПРИНЯТ','Нужен другой файл')+`<p class="ux-error" role="alert">Ответ относится к другому запросу. Текущая программа не изменена.</p>`+btn('Выбрать другой ответ · пример',6,true)+btn('Подготовить новый запрос',5);break;
+ case 17:html=head('ПОДХОД НЕ СОХРАНЁН','Попробуйте ещё раз')+`<p class="ux-error" role="alert">Не удалось записать подход. Введённые значения остались. Освободите место и повторите.</p><p>Вес: ${esc(weight||'неизвестен')} · Повторы: ${esc(reps)}</p><button class="ux-primary" data-action="set">Повторить сохранение · пример</button>`+btn('Вернуться к вводу',9);break;
+ }
+ content.innerHTML=html;
+ root.querySelector('#ux-nav').innerHTML=[['Тренировка',accepted?8:0],['Прогресс',13],['Тренер',accepted?15:5],['Профиль',14]].map(([label,to])=>`<button data-go="${to}" ${step===to?'aria-current="page"':''}>${label}</button>`).join('');
+ }
+ function go(to){capture();if(step===4&&[1,2,3].includes(to))editingSummary=true;if(step===2&&to===3&&editingSummary)to=4;if(to===4)editingSummary=false;step=to;render();if(globalThis.openai?.setWidgetState)globalThis.openai.setWidgetState({modelContent:{screen:names[step]},privateContent:{step}}).catch(()=>{});}
+ root.addEventListener('click',event=>{
+ const target=event.target.closest('button');if(!target)return;
+ if(target.dataset.go!==undefined){go(Number(target.dataset.go));return;}
+ if(target.dataset.goal){root.querySelector('#ux-goal').value=target.dataset.goal;goal=target.dataset.goal;return;}
+ capture();
+ switch(target.dataset.action){
+ case 'goal':if(!goal.trim()){root.querySelector('#ux-goal-error').textContent='Напишите цель или выберите вариант.';root.querySelector('#ux-goal').focus();return;}go(editingSummary?4:2);break;
+ case 'profile':if(!goal.trim()){go(1);return;}go(5);status.textContent='Пример: сведения сохранены.';break;
+ case 'export':go(6);status.textContent='Пример следующего шага. Файл не скачивался.';break;
+ case 'copy':status.textContent='Пример: здесь копируется весь запрос. Буфер обмена не менялся.';break;
+ case 'command':status.textContent='Пример: текст для чата скопирован. Буфер обмена не менялся.';break;
+ case 'import':go(7);break;
+ case 'accept':accepted=true;nextWorkout='А';go(8);status.textContent='Пример: программа принята.';break;
+ case 'update':accepted=true;nextWorkout='А';go(8);status.textContent='Пример: принята новая версия, история сохранена.';break;
+ case 'start':done=0;go(9);break;
+ case 'set':if(!Number.isInteger(Number(reps))||Number(reps)<1||Number(reps)>1000||(weight.trim()&&(!Number.isFinite(Number(weight.replace(',','.')))||Number(weight.replace(',','.'))<0))){status.textContent='Проверьте повторы и вес. Черновик сохранён на экране.';return;}done++;restDeadline=Date.now()+60000;go(10);break;
+ case 'set-error':go(17);break;
+ case 'finish':nextWorkout=done?(nextWorkout==='А'?'Б':'А'):nextWorkout;go(12);break;
+ }
+ });
+ root.addEventListener('change',event=>{if(event.target.id==='ux-consent')root.querySelector('#ux-accept').disabled=!event.target.checked;});
+ screenPicker.addEventListener('change',()=>go(Number(screenPicker.value)));
+ root.querySelector('#ux-width').addEventListener('change',event=>root.style.setProperty('--ux-width',event.target.value+'px'));
+ root.querySelector('#ux-large').addEventListener('change',event=>root.style.setProperty('--ux-size',event.target.checked?'32px':'16px'));
+ const saved=globalThis.openai?.widgetState?.privateContent?.step;if(Number.isInteger(saved)&&saved>=0&&saved<names.length)step=saved;
+ window.addEventListener('openai:set_globals',event=>{const s=event.detail?.globals?.widgetState?.privateContent?.step;if(Number.isInteger(s)&&s>=0&&s<names.length){step=s;render();}});
+ render();
+ const timer=setInterval(()=>{if(!root.isConnected){clearInterval(timer);return;}const node=root.querySelector('#ux-timer');if(node){const seconds=Math.max(0,Math.ceil((restDeadline-Date.now())/1000));node.textContent=restDeadline?`${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`:'1:00';}},1000);
+ if(globalThis.Tweak){const design={large:false};new Tweak({container:root,onChange:()=>{root.style.setProperty('--ux-size',design.large?'32px':'16px');root.querySelector('#ux-large').checked=design.large;}}).addToggle(design,'large',{label:'Крупный текст'});}
+})();
+</script>

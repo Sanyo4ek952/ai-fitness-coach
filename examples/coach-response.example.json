@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "kind": "coach_response",
+  "requestId": "db0a8ea6-1f74-4ac1-95d0-e55f042cae75",
+  "context": {
+    "profileRevision": 1,
+    "programVersionId": null,
+    "historyRevision": 0
+  },
+  "decision": "propose_program",
+  "summary": "Предлагается стартовый цикл с подбором рабочих весов.",
+  "reasons": [
+    "Рабочие веса неизвестны; требуется начальная калибровка."
+  ],
+  "nutritionTips": [],
+  "proposedProgram": {
+    "title": "Стартовый цикл",
+    "goalInterpretation": "Постепенно развивать силу и мышечную массу",
+    "workouts": [
+      {
+        "title": "Тренировка A",
+        "exercises": [
+          {
+            "exerciseId": "goblet-squat",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          },
+          {
+            "exerciseId": "db-bench-press",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          },
+          {
+            "exerciseId": "db-row",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          }
+        ]
+      },
+      {
+        "title": "Тренировка B",
+        "exercises": [
+          {
+            "exerciseId": "db-bench-press",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          },
+          {
+            "exerciseId": "db-row",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          },
+          {
+            "exerciseId": "goblet-squat",
+            "sets": 2,
+            "target": {
+              "type": "reps",
+              "min": 8,
+              "max": 12,
+              "weightKg": null
+            },
+            "restSec": 120,
+            "rir": 3,
+            "note": "Подобрать нагрузку с сохранением техники и запаса повторений."
+          }
+        ]
+      }
+    ],
+    "reviewAfterSessions": 2
+  }
+}

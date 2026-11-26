@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "training_program",
+  "program": {
+    "title": "Пример формата, не готовая рекомендация",
+    "goalInterpretation": "Моя цель из уже составленного плана",
+    "workouts": [
+      {
+        "title": "День А",
+        "exercises": [
+          {
+            "exerciseId": "db-bench-press",
+            "sets": 3,
+            "target": { "type": "reps", "min": 8, "max": 12, "weightKg": null },
+            "restSec": 120,
+            "rir": null,
+            "note": "Вес указан для одной гантели; неизвестный вес — null."
+          }
+        ]
+      }
+    ],
+    "reviewAfterSessions": 8
+  }
+}

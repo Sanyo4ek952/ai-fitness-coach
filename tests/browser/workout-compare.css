@@ -1,0 +1,50 @@
+.comparison-page { min-height: 100vh; background: #e8edf4; color: #17263e; padding: 20px; font: 16px Arial, sans-serif; }
+.comparison-toolbar { max-width: 820px; margin: auto auto 20px; }
+.comparison-toolbar h1 { margin: 0 0 8px; font-size: 24px; letter-spacing: 0; }
+.comparison-toolbar p { margin: 8px 0; font-size: 14px; }
+.comparison-toolbar > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.comparison-toolbar button { min-height: 44px; border: 1px solid #426183; border-radius: 8px; padding: 8px 16px; background: white; color: #17263e; }
+.comparison-toolbar button[aria-pressed="true"] { background: #1750ff; color: white; }
+.comparison-columns { display: grid; grid-template-columns: 390px 390px; gap: 32px; width: 812px; margin: auto; align-items: start; }
+.comparison-columns > section > h2 { margin: 0 0 12px; font: 700 17px Arial, sans-serif; }
+.reference-crop { position: relative; width: 390px; overflow: hidden; background: #040e28; }
+.reference-crop > img { position: absolute; display: block; max-width: none; }
+.reference-overview { height: 850px; }
+.reference-overview > img { width: 613.46px; left: -14.38px; top: -49.13px; }
+.reference-active { height: 808px; }
+.reference-active > img { width: 416.08px; left: -14.22px; top: -32.22px; }
+.reference-rest { height: 669px; }
+.reference-rest > img { width: 1307.95px; left: -227.36px; top: -137.95px; }
+.comparison-live, .comparison-live .app-shell { width: 390px; }
+.comparison-live .radix-themes { min-height: 0; }
+.comparison-overview .comparison-live .app-shell { height: 850px; min-height: 850px; }
+.comparison-active .comparison-live .app-shell { height: 808px; min-height: 808px; }
+.comparison-rest .comparison-live .app-shell { height: 669px; min-height: 669px; }
+.comparison-live { display: block; height: 808px; border: 0; background: #040e28; }
+.comparison-overview .comparison-live { height: 850px; }
+.comparison-rest .comparison-live, .comparison-full .comparison-live { height: 669px; }
+.comparison-actions .comparison-live, .comparison-finish .comparison-live, .comparison-result .comparison-live { height: 745px; }
+.reference-full { height: 669px; }
+.reference-full > img { width: 1307.95px; left: -692px; top: -137.95px; }
+.reference-actions, .reference-finish, .reference-result { height: 745px; }
+.reference-actions > img, .reference-finish > img, .reference-result > img { width: 1319.47px; top: -68.72px; }
+.reference-actions > img { left: -30.93px; }
+.reference-finish > img { left: -465.6px; }
+.reference-result > img { left: -899.4px; }
+.reference-empty, .reference-resume { height: 209px; }
+.reference-error, .reference-expired { height: 237px; }
+.reference-empty > img, .reference-resume > img, .reference-error > img, .reference-expired > img { width: 890.13px; }
+.reference-empty > img { left: -41.72px; top: -75.36px; }
+.reference-resume > img { left: -459.55px; top: -75.36px; }
+.reference-error > img { left: -41.72px; top: -318.72px; }
+.reference-expired > img { left: -459.55px; top: -318.72px; }
+.comparison-empty .comparison-live, .comparison-resume .comparison-live { height: 216px; }
+.comparison-error .comparison-live { height: 252px; }
+.comparison-expired .comparison-live { height: 260px; }
+.preview-card { width: 100%; padding: 0; }
+.preview-card .workout-state-card { margin: 0; }
+.preview-card .workout-page { padding: 0; }
+.preview-card-error .session-heading, .preview-card-error .session-progress, .preview-card-error .session-count, .preview-card-error .exercise-navigation, .preview-card-error .rest-dock { display: none; }
+.preview-card-error .exercise-editor { margin: 0; padding: .5rem .75rem; }
+.preview-card-expired .rest-dock { margin: 0; position: static; box-shadow: none; padding: .75rem; }
+.comparison-large-text .comparison-live { width: 360px; height: 800px; }
