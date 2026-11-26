@@ -83,7 +83,12 @@ test("production PWA: every generated precache URL is served; private files excl
   assert.ok(match);
   const assets = JSON.parse(match[1]);
   const integrity = JSON.parse(worker.match(/const INTEGRITY = (\{.*\});/)[1]);
-  for (const path of ["/", "/workout/", "/progress/", "/coach/", "/profile/", "/coach/index.txt", "/coach/__next.coach/__PAGE__.txt"]) assert.ok(assets.includes(path), path);
+  for (const path of ["/", "/workout/", "/progress/", "/coach/", "/profile/", "/coach/index.txt"]) assert.ok(assets.includes(path), path);
+  // Next emits nested segment paths on Windows and dotted filenames on Linux.
+  assert.ok(
+    assets.includes("/coach/__next.coach/__PAGE__.txt") || assets.includes("/coach/__next.coach.__PAGE__.txt"),
+    "Missing coach page segment payload",
+  );
   assert.ok(assets.length > 20);
   for (const path of assets) {
     assert.doesNotMatch(path, /tests|backup|photo|request\.json|sw\.js/);
